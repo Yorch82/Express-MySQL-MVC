@@ -7,6 +7,6 @@ router.post ("/addCategorie", CategoriesController.create);
 router.put("/updateCategorie/:id", CategoriesController.updateCategorie);
 router.get("/showCategories", CategoriesController.showCategories);
 router.get("/showCategories/id/:id", CategoriesController.showcategoriesById);
-
+router.get("/createtable/productoscategorias", CategoriesController.createProductcategories);
 
 module.exports = router;

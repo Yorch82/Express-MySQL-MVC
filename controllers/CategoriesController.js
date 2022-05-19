@@ -39,6 +39,16 @@ const CategoriesController = {
             if (err) throw err;
             res.send(results);
         });        
+    },
+    createProductcategories (req,res){        
+        let sql =
+        `CREATE TABLE expressDB.productoscategorias(id INT AUTO_INCREMENT,product_id INT, category_id INT,PRIMARY KEY(id),
+                FOREIGN KEY(product_id) REFERENCES expressDB.products(id) ON DELETE CASCADE,
+                FOREIGN KEY(category_id) REFERENCES expressDB.categories(id));`;
+        db.query(sql, (err, result) => {
+            if (err) throw err;
+            res.send("... table created...")
+        });        
     }
 }
 
